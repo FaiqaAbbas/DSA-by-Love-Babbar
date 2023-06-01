@@ -13,7 +13,6 @@ int main() {
   n = abs(n); // to remove the negative sign if the user has entered a negative number
   cout << "\n" << n << " in binary  is : ";
   bool bit;
-  int totalNumberOfBits=0;
   int bIndex = 31;
   for(int i = 1; n > 0; i++) {
     bit = n & 1;
@@ -27,8 +26,7 @@ int main() {
     }
     bIndex--;
   }
-	totalNumberOfBits=32-bIndex;
-  for(int i = 0; i < 32; i++) {
+ for(int i = 0; i < 32; i++) {
     cout << binaryOfNumber[i];
   }
   cout<<endl;
