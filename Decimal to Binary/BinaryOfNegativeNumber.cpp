@@ -30,7 +30,7 @@ int main() {
     cout << binaryOfNumber[i];
   }
   cout<<endl;
-  cout << "\nOne's complement: ";
+  cout << "\nOne's complement:  ";
   for(int i = 0; i < 32; i++) {
     if(binaryOfNumber[i] == false) {
       onesCompliment[i] = true;
@@ -48,7 +48,7 @@ int main() {
   	twosCompliment[i]=onesCompliment[i];
   }
   bool carry=1;
-  cout << "\nTwo's Complement: ";
+  cout << "\nTwo's Complement:  ";
   
     for (int i = 31; i >=bIndex; i--) {
 		if(onesCompliment[i]==1){
