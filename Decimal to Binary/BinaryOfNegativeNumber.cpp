@@ -18,18 +18,15 @@ int main() {
     bit = n & 1;
     ans = ans + (bit * pow(10, i));
     n = n >> 1;
-    if(bit == 0){
-        binaryOfNumber[bIndex] = false;
-    }
-    else{
-        binaryOfNumber[bIndex] = true;
-    }
+    binaryOfNumber[bIndex] = bit; 
     bIndex--;
   }
+	//To print Binary of the number
  for(int i = 0; i < 32; i++) {
     cout << binaryOfNumber[i];
   }
   cout<<endl;
+	//Finding One's Compliment
   cout << "\nOne's complement:  ";
   for(int i = 0; i < 32; i++) {
     if(binaryOfNumber[i] == false) {
@@ -39,38 +36,42 @@ int main() {
       onesCompliment[i] = false;
     }
   }
+	//To print One's Compliment
   for(int i=0;i<=31;i++){
   	cout<<onesCompliment[i];
   }
   cout<<" (Flip 1->0 and 0->1)"<<endl;
-  //assign twosCompliment=onesComplimemnt so that we can have 11111 for twosCompliment array
-  for(int i=0;i<31;i++){
-  	twosCompliment[i]=onesCompliment[i];
-  }
-  bool carry=1;
-  cout << "\nTwo's Complement:  ";
-  
-    for (int i = 31; i >=bIndex; i--) {
+
+
+ 	//Finding Two's Compliment 
+	int carry=1;
+	for(int i=31;i>=0;i--){
 		if(onesCompliment[i]==1){
 			if(carry==1){
 				twosCompliment[i]=0;
 				carry=1;
 			}
-			             
-		}                
-		else{            
+			else{
+				twosCompliment[i]=1;
+
+			}
+		}
+		else{
 			if(carry==1){
 				twosCompliment[i]=1;
 				carry=0;
 			}
-		}	
-    }
-  
-  	for(int i=0;i<=31;i++){
-  		cout<<twosCompliment[i];
-  	}  
-    cout<<endl;
-   	
+			else{
+			
+			}
+		}
+	}
+	cout<<endl;
+		//To print Two's Compliment of the number
+	for(int i=0;i<32;i++){
+		cout<<twosCompliment[i];
+	}
+	
   
   
  
